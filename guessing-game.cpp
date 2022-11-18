@@ -3,9 +3,9 @@
 void
 print_header(void)
 {
-	std::cout << "*********************************\n";
-	std::cout << "* Welcome to the guessing game! *\n";
-	std::cout << "*********************************\n";
+	std::cout << "*********************************" << std::endl;
+	std::cout << "* Welcome to the guessing game! *" << std::endl;
+	std::cout << "*********************************" << std::endl;
 }
 
 int
