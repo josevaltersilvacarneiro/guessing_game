@@ -1,11 +1,13 @@
 #include <iostream>
 
+using namespace std;
+
 void
 print_header(void)
 {
-	std::cout << "*********************************" << std::endl;
-	std::cout << "* Welcome to the guessing game! *" << std::endl;
-	std::cout << "*********************************" << std::endl;
+	cout << "*********************************" << endl;
+	cout << "* Welcome to the guessing game! *" << endl;
+	cout << "*********************************" << endl;
 }
 
 int
