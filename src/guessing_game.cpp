@@ -29,9 +29,9 @@ main(void)
 	int       guess;
 
 	do {
-		print_header();                           /* Print the header */
+		print_header();			/* Print the header */
 		
-		guess = input_guess();
+		guess = input_guess();		/* Get the guess */
 		hit = SECRET_NUMBER == guess;
 
 		if (!hit)
