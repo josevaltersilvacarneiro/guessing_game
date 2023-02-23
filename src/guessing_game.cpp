@@ -3,6 +3,7 @@
 using namespace std;
 
 #define NUMBER_OF_TRIES 10
+#define MAX_SCORE	1000
 
 unsigned int
 get_try(void)
@@ -34,6 +35,7 @@ input_guess(void)
 int
 main(void)
 {
+	float	  score = MAX_SCORE;
 	bool      hit;
 	const int SECRET_NUMBER = 42;
 	int       guess;
@@ -50,7 +52,11 @@ main(void)
 
 		if (!hit)
 			cout << "You lost" << endl;
+
+		score -= (float) abs(guess - SECRET_NUMBER) / 2;
 	} while (!hit && _try != NUMBER_OF_TRIES);
+
+	cout << "Your score: " << score << endl;
 
 	if (hit)
 		cout << "You got it right" << endl;
