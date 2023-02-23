@@ -9,7 +9,7 @@ get_try(void)
 {
 	static unsigned int _try = NUMBER_OF_TRIES;
 
-	return --_try;
+	return _try != 0 ? --_try : 0;
 }
 
 void
