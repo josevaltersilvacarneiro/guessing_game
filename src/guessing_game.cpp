@@ -2,6 +2,16 @@
 
 using namespace std;
 
+#define NUMBER_OF_TRIES 10
+
+unsigned int
+get_try(void)
+{
+	static unsigned int _try = NUMBER_OF_TRIES;
+
+	return --_try;
+}
+
 void
 print_header(void)
 {
@@ -27,18 +37,23 @@ main(void)
 	bool      hit;
 	const int SECRET_NUMBER = 42;
 	int       guess;
+	int	  _try;
 
 	do {
 		print_header();			/* Print the header */
 		
+		_try = NUMBER_OF_TRIES - get_try();
+		cout << _try << "ª try!" << endl;
+
 		guess = input_guess();		/* Get the guess */
 		hit = SECRET_NUMBER == guess;
 
 		if (!hit)
 			cout << "You lost" << endl;
-	} while (!hit);
+	} while (!hit && _try != NUMBER_OF_TRIES);
 
-	cout << "You got it right" << endl;
+	if (hit)
+		cout << "You got it right" << endl;
 	
 	return 0;
 }
