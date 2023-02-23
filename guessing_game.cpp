@@ -13,22 +13,23 @@ print_header(void)
 int
 main(void)
 {
-	int secret_number = 42;
-	int guess;
+	bool hit;
+	int  secret_number = 42;
+	int  guess;
 
-	for (;;) {
+	do {
 		print_header();                           /* Print the header */
 
 		cout << "Type your guess: ";
 		cin >> guess;
 
-		if (secret_number != guess)
-			cout << "You lost" << endl;
-		else {
-			cout << "You got it right" << endl;
-			break;
-		}
-	}
+		hit = secret_number == guess;
 
+		if (!hit)
+			cout << "You lost" << endl;
+	} while (!hit);
+
+	cout << "You got it right" << endl;
+	
 	return 0;
 }
