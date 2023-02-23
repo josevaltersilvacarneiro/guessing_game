@@ -13,9 +13,9 @@ print_header(void)
 int
 main(void)
 {
-	bool hit;
-	int  secret_number = 42;
-	int  guess;
+	bool      hit;
+	const int SECRET_NUMBER = 42;
+	int       guess;
 
 	do {
 		print_header();                           /* Print the header */
@@ -23,7 +23,7 @@ main(void)
 		cout << "Type your guess: ";
 		cin >> guess;
 
-		hit = secret_number == guess;
+		hit = SECRET_NUMBER == guess;
 
 		if (!hit)
 			cout << "You lost" << endl;
