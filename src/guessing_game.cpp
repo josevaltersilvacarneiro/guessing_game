@@ -11,6 +11,17 @@ print_header(void)
 }
 
 int
+input_guess(void)
+{
+	int guess;
+
+	cout << "Type your guess: ";
+	cin >> guess;
+
+	return guess;
+}
+
+int
 main(void)
 {
 	bool      hit;
@@ -19,10 +30,8 @@ main(void)
 
 	do {
 		print_header();                           /* Print the header */
-
-		cout << "Type your guess: ";
-		cin >> guess;
-
+		
+		guess = input_guess();
 		hit = SECRET_NUMBER == guess;
 
 		if (!hit)
