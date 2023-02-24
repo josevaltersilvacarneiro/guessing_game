@@ -1,7 +1,10 @@
 #include <iostream>
+#include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
+#define INTERVAL	10
 #define NUMBER_OF_TRIES 10
 #define MAX_SCORE	1000
 
@@ -10,7 +13,10 @@ randm(void)
 {
 	/* This function returns a random number */
 
-	return 42;
+	int seconds = time(NULL);
+	srand(seconds);
+
+	return rand() % INTERVAL;
 }
 
 unsigned int
