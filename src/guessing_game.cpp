@@ -5,6 +5,14 @@ using namespace std;
 #define NUMBER_OF_TRIES 10
 #define MAX_SCORE	1000
 
+int
+randm(void)
+{
+	/* This function returns a random number */
+
+	return 42;
+}
+
 unsigned int
 get_try(void)
 {
@@ -37,7 +45,7 @@ main(void)
 {
 	float	  score = MAX_SCORE;
 	bool      hit;
-	const int SECRET_NUMBER = 42;
+	const int SECRET_NUMBER = randm();
 	int       guess;
 	int	  _try;
 
